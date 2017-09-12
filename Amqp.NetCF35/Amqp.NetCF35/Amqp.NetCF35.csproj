@@ -1,0 +1,156 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E71D245-20D5-46B8-8C13-462236295B12}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Amqp.NetCF35</RootNamespace>
+    <AssemblyName>Amqp.NetCF35</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>Amqp.NetCF35</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="AmqpBitConverter.cs" />
+    <Compile Include="AmqpException.cs" />
+    <Compile Include="AmqpObject.cs" />
+    <Compile Include="ByteBuffer.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="Delivery.cs" />
+    <Compile Include="Framing\Accepted.cs" />
+    <Compile Include="Framing\AmqpSequence.cs" />
+    <Compile Include="Framing\AmqpValue.cs" />
+    <Compile Include="Framing\ApplicationProperties.cs" />
+    <Compile Include="Framing\Attach.cs" />
+    <Compile Include="Framing\Begin.cs" />
+    <Compile Include="Framing\Close.cs" />
+    <Compile Include="Framing\Codec.cs" />
+    <Compile Include="Framing\Data.cs" />
+    <Compile Include="Framing\DeliveryAnnotations.cs" />
+    <Compile Include="Framing\DeliveryState.cs" />
+    <Compile Include="Framing\Detach.cs" />
+    <Compile Include="Framing\Dispose.cs" />
+    <Compile Include="Framing\End.cs" />
+    <Compile Include="Framing\Error.cs" />
+    <Compile Include="Framing\Flow.cs" />
+    <Compile Include="Framing\Footer.cs" />
+    <Compile Include="Framing\Frame.cs" />
+    <Compile Include="Framing\Header.cs" />
+    <Compile Include="Framing\MessageAnnotations.cs" />
+    <Compile Include="Framing\Modified.cs" />
+    <Compile Include="Framing\Open.cs" />
+    <Compile Include="Framing\Outcome.cs" />
+    <Compile Include="Framing\Properties.cs" />
+    <Compile Include="Framing\ProtocolHeader.cs" />
+    <Compile Include="Framing\Reader.cs" />
+    <Compile Include="Framing\Received.cs" />
+    <Compile Include="Framing\ReceiverSettleMode.cs" />
+    <Compile Include="Framing\Rejected.cs" />
+    <Compile Include="Framing\Released.cs" />
+    <Compile Include="Framing\SenderSettleMode.cs" />
+    <Compile Include="Framing\Source.cs" />
+    <Compile Include="Framing\Target.cs" />
+    <Compile Include="Framing\Transfer.cs" />
+    <Compile Include="ITransport.cs" />
+    <Compile Include="Link.cs" />
+    <Compile Include="LinkedList.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="NetCF35\Fx.cs" />
+    <Compile Include="NetCF35\List.cs" />
+    <Compile Include="NetCF35\Map.cs" />
+    <Compile Include="NetCF35\SRAmqp.Designer.cs" />
+    <Compile Include="NetCF35\SslSocket.cs" />
+    <Compile Include="NetCF35\TcpTransport.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiverLink.cs" />
+    <Compile Include="Sasl\SaslChallenge.cs" />
+    <Compile Include="Sasl\SaslCode.cs" />
+    <Compile Include="Sasl\SaslExternalProfile.cs" />
+    <Compile Include="Sasl\SaslInit.cs" />
+    <Compile Include="Sasl\SaslMechanisms.cs" />
+    <Compile Include="Sasl\SaslOutcome.cs" />
+    <Compile Include="Sasl\SaslPlainProfile.cs" />
+    <Compile Include="Sasl\SaslProfile.cs" />
+    <Compile Include="Sasl\SaslResponse.cs" />
+    <Compile Include="SenderLink.cs" />
+    <Compile Include="SequenceNumber.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="Trace.cs" />
+    <Compile Include="Types\Described.cs" />
+    <Compile Include="Types\DescribedList.cs" />
+    <Compile Include="Types\DescribedMap.cs" />
+    <Compile Include="Types\DescribedValue.cs" />
+    <Compile Include="Types\Descriptor.cs" />
+    <Compile Include="Types\Encoder.cs" />
+    <Compile Include="Types\ErrorCode.cs" />
+    <Compile Include="Types\Fields.cs" />
+    <Compile Include="Types\FixedWidth.cs" />
+    <Compile Include="Types\FormatCode.cs" />
+    <Compile Include="Types\Map.cs" />
+    <Compile Include="Types\RestrictedDescribed.cs" />
+    <Compile Include="Types\Symbol.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
